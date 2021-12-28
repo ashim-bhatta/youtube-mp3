@@ -1,0 +1,50 @@
+.login__forms-container__form__input-field {
+  width: var(--btn-width);
+  position: relative;
+  transition: 0.3s;
+
+  label {
+    font-size: 14px;
+    position: absolute;
+    transform: translateY(-100%);
+    top: 45%;
+    margin-left: 20px;
+    color: var(--secondary-grey);
+    font-weight: 500;
+    transition: 0.3s;
+    padding: 0 10px;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .active {
+    top: 0%;
+    transform: translateY(-50%);
+    background-color: rgb(255, 255, 255);
+  }
+  &__input {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-grey);
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--secondary-grey);
+    margin-bottom: 20px;
+    padding: 15px 30px;
+    border-color: var(--primary-grey);
+    color: var(--secondary-grey);
+    font-weight: 600;
+  }
+
+  &__icon {
+    position: absolute;
+    transform: translateY(-100%);
+    top: 50%;
+    right: 20px;
+    color: var(--secondary-grey);
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--primary-grey);
+  }
+}

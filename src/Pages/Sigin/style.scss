@@ -1,0 +1,135 @@
+.signup-container {
+  .signup {
+    width: clamp(280px, 100%, 1700px);
+    min-height: 100vh;
+    display: flex;
+    padding: 20px;
+
+    @media (min-width: 1000px) {
+      padding: 40px;
+    }
+
+    &__background {
+      min-height: 100%;
+      background: var(--theme-color);
+      flex-direction: column;
+      color: white;
+      align-items: flex-start;
+      width: clamp(330px, 40vw, 630px);
+      border-radius: 0px 40px 40px 0px;
+      padding: 0 clamp(30px, 7vw, 80px);
+      display: none;
+      box-shadow: 6px 2px 20px rgba(0, 0, 0, 0.5);
+
+      @media (min-width: 1000px) {
+        display: flex !important;
+      }
+
+      &__title {
+        font-size: clamp(8px, 1vw, 14px);
+        letter-spacing: 2px;
+        color: var(--secondary-grey);
+        font-weight: 700;
+        margin-bottom: clamp(35px, 5vw, 55px);
+      }
+      &__greating {
+        font-family: 'Open Sans', sans-serif;
+        color: white;
+        margin: 50px 0;
+        font-size: 26px;
+        font-weight: 500;
+      }
+
+      &__intro {
+        font-size: 12.1px;
+        letter-spacing: 2px;
+        color: var(--primary-grey);
+        font-weight: 400;
+        margin-bottom: clamp(20px, 5vw, 40px);
+        line-height: clamp(19px, 1.1vw, 18px);
+      }
+
+      &__new-account {
+        font-size: 12px;
+        color: var(--secondary-grey);
+        font-weight: 500;
+        margin-bottom: clamp(20px, 5vw, 40px);
+
+        &__link {
+          color: white;
+          margin-left: 10px;
+          font-size: 14px;
+          cursor: pointer;
+        }
+      }
+
+      &__static-content-link {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        margin-top: clamp(20px, 5vw, 40px);
+        font-size: 13px;
+        font-weight: 500;
+
+        &___terms {
+          margin-right: 30px;
+        }
+      }
+    }
+
+    &__forms-container {
+      background-color: rgb(255, 255, 255);
+      flex: 1;
+      border-radius: 20px;
+      flex-direction: column;
+      box-shadow: -2px 1px 20px rgba(7, 7, 7, 0.2);
+
+      @media (min-width: 1000px) {
+        border-radius: 40px 0px 0px 40px;
+        padding: 0 clamp(30px, 7vw, 80px);
+      }
+
+      &__title {
+        font-family: 'Open Sans', sans-serif;
+        color: var(--theme-color);
+        font-size: 26px;
+        font-weight: 500;
+      }
+
+      &__form {
+        margin: 40px 0;
+        width: 100%;
+        flex-direction: column;
+
+        &__submit-button {
+          --btn-color: var(--theme-color);
+          width: var(--btn-width);
+        }
+
+        &__forget-password {
+          margin-top: clamp(20px, 5vw, 40px);
+          font-size: 12px;
+          color: var(--primary-grey);
+          font-weight: 500;
+          margin-bottom: 40px;
+        }
+
+        &__google-login {
+          --btn-color: transparent;
+          color: var(--theme-color);
+          width: var(--btn-width);
+          border: 1px solid var(--primary-grey);
+          margin-top: 70px;
+
+          &__icon {
+            height: 20px;
+          }
+          p {
+            margin-left: 15px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}
