@@ -1,0 +1,35 @@
+.playlist-card{
+  background-color: white;
+  width: 100%;
+  height: clamp(110px, 15vw, 160px);
+  border-radius: 10px;
+  padding: 10px;
+  flex-direction: column;
+  cursor: pointer;
+
+  &:hover{
+    background-color: var(--theme-color);
+    color: white;
+  }
+  
+  &__image-container{
+    width: clamp(40px, 5vw, 60px);
+    height: clamp(40px, 5vw, 60px);
+  }
+
+  &__image{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  &__title{
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-top: 5px;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+}

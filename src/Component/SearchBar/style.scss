@@ -1,5 +1,6 @@
 .search {
   width: 100%;
+  z-index: 100;
 
   &__bar {
     background-color: lighten(#b5b5b5, 20);
@@ -15,6 +16,7 @@
       position: absolute;
       inset: 0;
       width: 80%;
+      height: 100%;
       padding: 0 20px;
       outline: none;
       color: var(--secondary-grey);

@@ -17,7 +17,7 @@ const Home = () => {
           className='home__cd-container__image'
         />
       </div>
-      <Footer />
+      <Footer outerCircle />
     </div>
   )
 }
