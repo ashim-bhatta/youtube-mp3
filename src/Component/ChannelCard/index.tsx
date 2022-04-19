@@ -3,7 +3,6 @@ import './style.scss'
 
 const ChannelCard = ({data}) => {
   const [image, setImage] = useState('')
-console.log(data);
 
   useEffect(() => {
     setImage(data?.thumbnails[1]?.url)

@@ -5,10 +5,16 @@ import { FiSearch } from 'react-icons/fi'
 type propsType = {
   value?: string
   setValue?: (value: string) => void
-  handleSearch?: () => void
+  handleSearch?: (value) => void
 }
 
 const SearchBar = ({ value, setValue, handleSearch }: propsType) => {
+
+  const handleTextCHange = (e:any) => {
+    if (e.key === "Enter" && value) {
+      handleSearch(value)
+    }
+  }
   return (
     <div className='search center'>
       <div className='search__bar'>
@@ -17,11 +23,12 @@ const SearchBar = ({ value, setValue, handleSearch }: propsType) => {
           placeholder='Search'
           className='search__bar__input-field'
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={(e) => setValue(e?.target?.value)}
+          onKeyPress={(e) => handleTextCHange(e)}
         />
         <div
           className='search__bar__icon center'
-          onClick={() => handleSearch()}
+          onClick={() => { value && handleSearch(value) }}
         >
           <FiSearch />
         </div>

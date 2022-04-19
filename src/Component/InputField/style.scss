@@ -1,6 +1,7 @@
 .login__forms-container__form__input-field {
   width: var(--btn-width);
   position: relative;
+  background-color: transparent;
   transition: 0.3s;
 
   label {
@@ -22,6 +23,11 @@
     transform: translateY(-50%);
     background-color: rgb(255, 255, 255);
   }
+  .active--grey {
+    top: 0%;
+    transform: translateY(-50%);
+    background-color: var(--background-color);
+  }
   &__input {
     width: 100%;
     border-radius: 5px;
@@ -35,6 +41,8 @@
     border-color: var(--primary-grey);
     color: var(--secondary-grey);
     font-weight: 600;
+  background-color: transparent;
+
   }
 
   &__icon {

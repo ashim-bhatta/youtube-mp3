@@ -9,6 +9,9 @@ import Search from './Pages/Search'
 import Songs from './Pages/Songs'
 import Playlist from './Pages/Playlist'
 import Channels from './Pages/Channels'
+import Discover from './Pages/Discover'
+import Profile from './Pages/Profile'
+import PlaylistDetails from './Pages/PlaylistDetails'
 
 function App() {
   return (
@@ -20,7 +23,10 @@ function App() {
         <Route path='/signup' element={<SignUp />} />
         <Route path='/song-list' element={<Songs />} />
         <Route path='/playlist' element={<Playlist />} />
+        <Route path='/playlist/:id' element={<PlaylistDetails />} />
         <Route path='/channels' element={<Channels />} />
+        <Route path='/discover' element={<Discover />} />
+        <Route path='/profile' element={<Profile />} />
       </Routes>
     </Router>
   )

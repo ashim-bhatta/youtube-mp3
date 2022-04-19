@@ -5,15 +5,16 @@ import { AiFillEyeInvisible } from 'react-icons/ai'
 type propsType = {
   lable: string
   inputType: string
+  isGrey?: boolean
 }
 
-const InputField = ({ lable, inputType }: propsType) => {
+const InputField = ({ lable, inputType, isGrey = false }: propsType) => {
   const [lablePosition, setLablePosition] = useState('')
   const inputRef: any = useRef(null)
 
   const checkIfFocus = (isFocus: boolean) => {
     if (isFocus) {
-      setLablePosition('active')
+      isGrey ? setLablePosition('active--grey') : setLablePosition('active')
     } else if (inputRef.current.value.length === 0) {
       setLablePosition('')
     }
@@ -26,8 +27,12 @@ const InputField = ({ lable, inputType }: propsType) => {
       inputRef.current.type = 'text'
     }
   }
+
   return (
-    <div className='login__forms-container__form__input-field'>
+    <div
+      className='login__forms-container__form__input-field'
+      style={{ width: isGrey && '100%' }}
+    >
       <label className={lablePosition}>{lable}</label>
       <input
         className='login__forms-container__form__input-field__input'
@@ -40,6 +45,7 @@ const InputField = ({ lable, inputType }: propsType) => {
       {inputType === 'password' && (
         <AiFillEyeInvisible
           className='login__forms-container__form__input-field__icon'
+          
           onClick={() => changeInputType()}
         />
       )}
@@ -47,3 +53,4 @@ const InputField = ({ lable, inputType }: propsType) => {
   )
 }
 export default InputField
+// className={click? style.show: : style.hide} 

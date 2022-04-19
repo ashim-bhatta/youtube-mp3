@@ -26,7 +26,7 @@ const Nav = () => {
     },
     {
       name: 'Profile',
-      path: '/login',
+      path: '/profile',
       icon: <CgProfile />,
     },
   ]

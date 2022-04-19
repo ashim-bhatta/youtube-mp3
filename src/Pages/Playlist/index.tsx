@@ -10,9 +10,7 @@ import './style.scss'
 
 const Playlist = () => {
   const navigation = useNavigate()
-  const { playlist } = useSelector(
-    (state: combineReducersType) => state.search
-  )
+  const { playlist } = useSelector((state: combineReducersType) => state.search)
 
   const handleCLick = () => {
     navigation.apply(null, ['/search'])
@@ -21,12 +19,10 @@ const Playlist = () => {
     <div>
       <Nav />
       <div className='search__result'>
-      <h3 className='song-more-list' onClick={() => handleCLick()}>
+        <h3 className='song-more-list' onClick={() => handleCLick()}>
           <BsArrowLeft /> <span>Back</span>
         </h3>
-        {
-          <PlaylistContainer playlist={playlist} />
-        }
+        {<PlaylistContainer playlist={playlist} />}
       </div>
       <Footer />
     </div>

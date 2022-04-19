@@ -1,0 +1,230 @@
+.playlist {
+  padding: 15px var(--main-padding);
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+
+    @media (min-width: 1000px) {
+      flex-direction: row;
+    }
+
+    &__image {
+      width: 100%;
+      height: auto;
+      max-width: 350px;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+    }
+
+    &__title {
+      margin-top: 15px;
+      @media (min-width: 1000px) {
+        margin-top: 0px;
+        padding: 20px 20px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      p {
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--secondary-grey);
+        @media (min-width: 1000px) {
+          font-size: 14px;
+        }
+      }
+
+      h3 {
+        font-size: clamp(24px, 3vw, 40px);
+        font-weight: 700;
+        margin-top: 10px;
+
+        @media (min-width: 1000px) {
+          font-size: clamp(34px, 3.5vw, 60px);
+        }
+      }
+    }
+  }
+
+  &__song-list {
+    margin-top: 30px;
+    width: 100%;
+    @media (min-width: 1000px) {
+      margin-top: 50px;
+    }
+    .song {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: 1000px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    .title {
+      margin-bottom: 15px;
+      @media (min-width: 1000px) {
+        margin-bottom: 30px;
+      }
+      h3 {
+        font-family: 'Open Sans', sans-serif;
+        font-size: clamp(24px, 3vw, 40px);
+      }
+      p {
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--secondary-grey);
+        @media (min-width: 1000px) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .song__active {
+      flex: 1;
+      position: relative;
+
+      .sticky {
+        position: sticky;
+        top: 0;
+      }
+    }
+    .song__active__outer {
+      width: 100%;
+      max-height: clamp(300px, 40vw, 500px);
+      // max-height: 600px;
+      background-color: rgba(255, 253, 254, 0.507);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0.1px 0px 20px rgba(102, 102, 102, 0.04);
+      @media (min-width: 1000px) {
+        padding: 50px 70px;
+      }
+    }
+
+    .song__active__inner {
+      background-color: #ffffff7e;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0.1px 0px 20px rgba(102, 102, 102, 0.2);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .image-cover {
+        width: clamp(130px, 20vw, 200px);
+        height: clamp(130px, 20vw, 200px);
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .song__list {
+    flex: 1;
+    padding: 30px 0;
+
+    &__item {
+      background-color: white;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      display: flex;
+      padding: 15px;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      transition: 0.3s;
+
+      &.active {
+        background-color: black;
+        color: white;
+        transform: scale(1.03);
+      }
+      &:hover {
+        background-color: black;
+        color: white;
+        transform: scale(1.03);
+      }
+
+      p {
+        display: none;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-weight: 700;
+
+        @media (min-width: 1000px) {
+          font-size: 14px;
+          display: flex;
+          margin-right: 15px;
+        }
+      }
+      &__image {
+        width: 70px;
+        height: 50px;
+        margin-right: 15px;
+        overflow: hidden;
+
+        @media (min-width: 1000px) {
+          font-size: 14px;
+          display: flex;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 5px;
+        }
+      }
+
+      &__title {
+        .large {
+          display: none;
+
+          @media (min-width: 1000px) {
+            font-size: 16px;
+            display: flex;
+            margin-right: 15px;
+          }
+        }
+        .mob {
+          font-size: 14px;
+          @media (min-width: 1000px) {
+            display: none;
+          }
+        }
+      }
+
+      &__duration {
+        display: none;
+        font-size: 10px;
+        font-weight: 700;
+
+        @media (min-width: 1000px) {
+          font-size: 14px;
+          display: flex;
+          position: absolute;
+          right: 15px;
+        }
+      }
+    }
+  }
+}

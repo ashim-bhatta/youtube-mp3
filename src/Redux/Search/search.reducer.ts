@@ -1,4 +1,4 @@
-import { SearchType, SEARCH_REQUEST } from './search.type'
+import { SearchType, SEARCH_REQUEST, SEARCH_REQUEST_START } from './search.type'
 
 const initialState: SearchType = {
   loading: false,
@@ -18,7 +18,7 @@ export const searchReducer = (state = initialState, action: any) => {
         channels: action.payload.channels,
         loading: false,
       }
-    case SEARCH_REQUEST:
+    case SEARCH_REQUEST_START:
       return {
         ...state,
         loading: action.payload,
